@@ -1,0 +1,1 @@
+require './kicka/base.rb'
