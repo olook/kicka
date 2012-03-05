@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/kicka_worker.rb'
+require File.dirname(__FILE__) + '/../lib/kicka_worker'
 
 KickaWorker::Base.new.dispatcher(ARGV[0])
 
