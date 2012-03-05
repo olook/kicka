@@ -1,2 +1,2 @@
-require File.dirname(__FILE__) + '/lib/kicka_worker/base'
+require File.dirname(__FILE__) + '/kicka_worker/base'
 
