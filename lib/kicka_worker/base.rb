@@ -24,13 +24,13 @@ module KickaWorker
     private
 
     def run_all_workers
-      `cd /srv/olook; nohup bundle exec rake environment QUEUE=mailer resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=mail_invite resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=mail_reinvite resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=order_status resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=abacos_to_front resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=front_to_abacos resque:work RAILS_ENV=production &;
-      nohup bundle exec rake environment QUEUE=showroom_ready_mailer resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=mailer resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=mail_invite resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=mail_reinvite resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=order_status resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=abacos_to_front resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=front_to_abacos resque:work RAILS_ENV=production &`
+      `cd /srv/olook; nohup bundle exec rake environment QUEUE=showroom_ready_mailer resque:work RAILS_ENV=production &`
     end
 
     def run_mailer_worker
