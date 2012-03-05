@@ -62,3 +62,4 @@ module KickaWorker
     end
   end
 end
+
