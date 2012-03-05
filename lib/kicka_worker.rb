@@ -1,1 +1,1 @@
-require './kicka/base.rb'
+require './lib/kicka_worker/base.rb'
