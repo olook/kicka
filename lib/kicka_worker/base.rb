@@ -32,6 +32,8 @@ module KickaWorker
 	  run_product_acknowledgment
 	when 'import_freight'
 	  run_import_freight
+	when 'SAC_notifications'
+	  run_SAC_notifications
 	when 'delayed_payment'
 	  run_delayed_payment
       end
@@ -78,6 +80,7 @@ module KickaWorker
       `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=product_acknowledgment resque:work RAILS_ENV=production > /dev/null 2>&1 &`
       `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=product_acknowledgment resque:work RAILS_ENV=production > /dev/null 2>&1 &`
       `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=import_freight resque:work RAILS_ENV=production > /dev/null 2>&1 &`
+      `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=SAC_notifications resque:work RAILS_ENV=production > /dev/null 2>&1 &`
       `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=delayed_payment resque:work RAILS_ENV=production > /dev/null 2>&1 &`
     end
 
@@ -146,6 +149,10 @@ module KickaWorker
 
     def run_import_freight
       `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=import_freight resque:work RAILS_ENV=production > /dev/null 2>&1 &`
+    end
+
+    def run_SAC_notifications
+      `cd /srv/olook/current; nohup bundle exec rake environment QUEUE=SAC_notifications resque:work RAILS_ENV=production > /dev/null 2>&1 &`
     end
 
     def run_delayed_payment
